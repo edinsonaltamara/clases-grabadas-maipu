@@ -6,34 +6,48 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
     :root {
-        --primary-bg: #0d1b2a;
+        --primary-bg: #0d1b2a;          /* color de fondo principal */
         --card-bg: #ffffff;
         --card-shadow: 0 2px 6px rgba(0,0,0,0.25);
         --link-color: #1ea7ff;
         --text-light: #e0e6ed;
     }
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
         font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
         background-color: var(--primary-bg);
         color: var(--text-light);
     }
+    /* ---------- HERO (imagen) ---------- */
+    .hero {
+        position: relative;
+        width: 100%;
+        min-height: 280px;            /* alto visible de la imagen */
+        background: url('residencia.jpg') center/cover no-repeat;
+    }
+    /* Degradado inferior para fusionar la imagen y el fondo */
+    .hero::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 140px;                /* altura del degradado */
+        background: linear-gradient(to bottom, rgba(13,27,42,0) 0%, var(--primary-bg) 95%);
+    }
+
+    /* ---------- CONTENIDO PRINCIPAL ---------- */
     main {
-        padding: 50px 20px;
+        padding: 50px 20px 60px;
     }
     h1 {
         text-align: center;
         margin-bottom: 35px;
-        color: var(--text-light);
         font-weight: 600;
     }
     ul {
         list-style: none;
-        padding: 0;
-        margin: auto;
         max-width: 700px;
+        margin: auto;
+        padding: 0;
     }
     li {
         background: var(--card-bg);
@@ -55,34 +69,33 @@
         font-weight: 600;
         border-radius: inherit;
     }
-    a:hover {
-        background: #f2f8ff;
-    }
+    a:hover { background: #f2f8ff; }
+
     footer {
-        padding: 40px 20px 50px;
+        padding: 40px 20px 60px;
         text-align: center;
-        background-color: transparent;
     }
     footer strong {
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.15rem;
         font-weight: 700;
-        color: var(--text-light);
     }
 </style>
 </head>
 <body>
 
+<header class="hero"></header>
+
 <main>
     <h1>Clases y sesiones grabadas</h1>
     <ul>
-        <li><a href="https://drive.google.com/drive/folders/1puTJBhDneqqiPrg-rnJmxLfrp2xlIfg9?usp=sharing" target="_blank">Clases grabadas en la nube de Google Drive por Christopher</a></li>
-        <li><a href="https://1drv.ms/f/c/b60b06e968a039c9/EkVtR_tro0JJknTTx31GIHkBE3S4hGw8cDJRoJQ1chjj-Q?e=7OCYxz" target="_blank">Clases grabadas en la nube de OneDrive por Christopher</a></li>
-        <li><a href="https://www.youtube.com/playlist?list=PLoJG09v2tNmc3AjvqU5-4nhK3Lar5VZIH" target="_blank">Clases con la&nbsp;Dra.&nbsp;Karen&nbsp;Lago</a></li>
-        <li><a href="https://youtube.com/playlist?list=PLoJG09v2tNmfAd2K5irAGD3-V_OqlKs_i&si=i0yJEv4cxod4-w8z" target="_blank">Clases de informes con Dr.&nbsp;Pablo&nbsp;Rodriguez</a></li>
-        <li><a href="https://youtube.com/playlist?list=PLoJG09v2tNmfB1-r6mvAyzco5R_jMT2Bg&si=oAcrDqHl6lg__OES" target="_blank">Sesión de informes con el&nbsp;Dr.&nbsp;Malagrini</a></li>
-        <li><a href="https://youtube.com/playlist?list=PLoJG09v2tNmeKEioU6JfBZaEDfFlXoRma&si=9B4aQvhdnvBK57vt" target="_blank">Clases de informes en rayos con el&nbsp;Dr.&nbsp;Sita</a></li>
-        <li><a href="https://youtube.com/playlist?list=PLoJG09v2tNmdDFSlbaEk9A_mIQVah4ptU&si=P7joqeo-yUg7OK4e" target="_blank">Presentación de casos por residentes</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1puTJBhDneqqiPrg-rnJmxLfrp2xlIfg9?usp=sharing" target="_blank" rel="noopener noreferrer">Clases grabadas en la nube de Google Drive por Christopher</a></li>
+        <li><a href="https://1drv.ms/f/c/b60b06e968a039c9/EkVtR_tro0JJknTTx31GIHkBE3S4hGw8cDJRoJQ1chjj-Q?e=7OCYxz" target="_blank" rel="noopener noreferrer">Clases grabadas en la nube de OneDrive por Christopher</a></li>
+        <li><a href="https://www.youtube.com/playlist?list=PLoJG09v2tNmc3AjvqU5-4nhK3Lar5VZIH" target="_blank" rel="noopener noreferrer">Clases con la&nbsp;Dra.&nbsp;Karen&nbsp;Lago</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLoJG09v2tNmfAd2K5irAGD3-V_OqlKs_i&si=i0yJEv4cxod4-w8z" target="_blank" rel="noopener noreferrer">Clases de informes con Dr.&nbsp;Pablo&nbsp;Rodriguez</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLoJG09v2tNmfB1-r6mvAyzco5R_jMT2Bg&si=oAcrDqHl6lg__OES" target="_blank" rel="noopener noreferrer">Sesión de informes con el&nbsp;Dr.&nbsp;Malagrini</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLoJG09v2tNmeKEioU6JfBZaEDfFlXoRma&si=9B4aQvhdnvBK57vt" target="_blank" rel="noopener noreferrer">Clases de informes en rayos con el&nbsp;Dr.&nbsp;Sita</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLoJG09v2tNmdDFSlbaEk9A_mIQVah4ptU&si=P7joqeo-yUg7OK4e" target="_blank" rel="noopener noreferrer">Presentación de casos por residentes</a></li>
     </ul>
 </main>
 
